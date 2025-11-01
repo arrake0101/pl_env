@@ -1,0 +1,26 @@
+[project]
+name = "dassl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+   "flake8==3.7.9",
+    "yapf==0.29.0",
+    "isort==4.3.21",
+    "yacs>=0.1.8",
+    "gdown>=5.2.0",
+    "tb-nightly>=2.18.0a0",
+    "future>=1.0.0",
+    "scipy>=1.13.0",
+    "scikit-learn>=1.5.0",
+    "tqdm>=4.66.0",
+]
+
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "numpy"
+]
+build-backend = "setuptools.build_meta"
