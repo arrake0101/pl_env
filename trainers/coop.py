@@ -19,7 +19,7 @@ _tokenizer = _Tokenizer()
 def load_clip_to_cpu(cfg):
     backbone_name = cfg.MODEL.BACKBONE.NAME
     url = clip._MODELS[backbone_name]
-    model_path = clip._download(url)
+    model_path = clip._download(url,root=cfg.MODEL.CLIP_DIR)
 
     try:
         # loading JIT archive

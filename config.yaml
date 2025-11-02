@@ -1,0 +1,45 @@
+# 默认配置文件
+# 数据集相关配置
+root: "W:\\dataset"  # 数据集路径根路径
+
+# prompt learning 不用填
+source_domains: []  # 源域（用于DA/DG）
+target_domains: []  # 目标域（用于DA/DG）
+
+
+
+
+# 训练配置
+seed: 1  # 随机种子，只有正值才启用固定种子
+no_train: false  # 是否不调用trainer.train()
+resume: ""  # 从哪个检查点恢复训练
+transforms: []  # 数据增强方法
+
+# 模型配置
+
+trainer: "CoOp"  # 训练器名称
+#一般不用填,因为在其他配置文件配置好了
+backbone: ""  # CNN骨干网络名称
+head: ""  # 头部名称
+
+# 评估配置
+eval_only: false  # 仅评估模式
+model_dir: ""  # 评估模式下加载模型的目录
+load_epoch: null  # 评估时加载的模型权重所在的epoch
+
+# 配置文件路径
+config_file: "configs/trainers/CoOp/vit_b16.yaml"  # 方法配置文件路径
+dataset_config_file: "configs/datasets/oxford_pets.yaml"  # 数据集配置文件路径
+
+# 输出配置
+output_dir: "./output"  # 输出目录
+clip_dir: "W:/project/pycharm/CLIP/clip_code/CLIP-main/pth"  # CLIP模型目录，仅当使用自定义CLIP模型时填写
+
+# 其他配置选项
+opts:
+#  number of shots (1, 2, 4, 8, 16)
+  - "DATASET.NUM_SHOTS"
+  - 1
+#  ["all", "base", "new"]
+  - "DATASET.SUBSAMPLE_CLASSES"
+  - "base"
