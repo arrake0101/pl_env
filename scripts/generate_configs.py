@@ -263,7 +263,8 @@ class ConfigGenerator:
         
         # 生成并设置 output_dir
         config['output_dir'] = self.generate_output_dir(params)
-        
+        config['model_dir']=config['output_dir'].replace("eval", "train")
+
         # 处理 opts 参数
         if 'opts' not in config:
             config['opts'] = []
