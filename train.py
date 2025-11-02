@@ -200,7 +200,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    config_path="./config.yaml"
+    config_path=r"W:\project\pycharm\pl_env\scripts\args\CoOp\oxford_pets\vit_b16\CoOp_8_all_eval_1.yaml"
     parser.add_argument("--config", type=str, default=config_path)
     parser.add_argument(
         "opts",
